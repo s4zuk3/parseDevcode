@@ -42,11 +42,11 @@
             <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary">
                 Ver videos <span class="caret"></span>
             </a>
-        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" ng-repeat="clase in curso.clases">
-              <li class="dropdown-submenu">
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" >
+              <li class="dropdown-submenu" ng-repeat="clase in curso.clases">
                 <a tabindex="-1" href="#">{{clase.nombre}} - {{clase.descripcion}}</a>
-                <ul class="dropdown-menu" ng-repeat="capitulo in clase.capitulos">
-                <li><a tabindex="-1" href="{{capitulo.url}}">{{capitulo.orden}} - {{capitulo.nombre}}</a></li>
+                <ul class="dropdown-menu">
+                <li  ng-repeat="capitulo in clase.capitulos"><a tabindex="-1" href="{{capitulo.url}}">{{capitulo.orden}} - {{capitulo.nombre}}</a></li>
                  </ul>
               </li>
             </ul>
