@@ -38,18 +38,22 @@
           </md-card-content>
           <div class="md-actions" layout="row" layout-align="end center">
             
-            <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Ver videos
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" ng-repeat="clase in curso.clases">
-      <li class="dropdown-submenu">
-        <a class="test" tabindex="-1" href="#">{{clase.nombre}} - {{clase.descripcion}} <span class="caret"></span></a>
-        <ul class="dropdown-menu" ng-repeat="capitulo in clase.capitulos">
-          <li><a tabindex="-1" href="{{capitulo.url}}">{{capitulo.orden}} - {{capitulo.nombre}}</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+<div class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#">
+                Ver videos <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" ng-repeat="clase in curso.clases">
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">{{clase.nombre}} - {{clase.descripcion}}</a>
+                <ul class="dropdown-menu" ng-repeat="capitulo in clase.capitulos">
+                <li><a tabindex="-1" href="{{capitulo.url}}">{{capitulo.orden}} - {{capitulo.nombre}}</a></li>
+                 </ul>
+              </li>
+            </ul>
+        </div>
+
+
+
 
 
 
